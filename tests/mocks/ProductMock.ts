@@ -21,8 +21,24 @@ import { Product } from '../../src/types/Product';
     "orderId": 4
   };
 
+  const validProductList: Product[] = [
+    {
+      "id": 1,
+      "name": "Eco de Luden",
+      "price": "30 peças de ouro",
+      "orderId": 1
+    },
+    {
+      "id": 2,
+      "name": "Cajado do Vazio",
+      "price": "25 peças de ouro",
+      "orderId": 1
+    },
+  ]
+
   export default {
-    validTransactionBody: validProduct,
-    validTransactionDB: validProductDB,
-    emptyNameTransaction: emptyProductName
+    validProduct,
+    validProductDB,
+    emptyProductName,
+    validProductList
     };
