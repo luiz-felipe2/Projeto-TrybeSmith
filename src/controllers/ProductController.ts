@@ -8,6 +8,12 @@ const create = async (req: Request, res: Response): Promise<void> => {
   res.status(mapStatusHttp(serviceResponse.status)).json(serviceResponse.data);
 };
 
+const getProduct = async (req: Request, res: Response) => {
+  const serviceResponse = await ProductService.getProduct();
+  res.status(mapStatusHttp(serviceResponse.status)).json(serviceResponse.data);
+};
+
 export default {
   create,
+  getProduct,
 };
