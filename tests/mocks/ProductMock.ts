@@ -36,9 +36,16 @@ import { Product } from '../../src/types/Product';
     },
   ]
 
+  const productSemNome = {
+    "id": 1,
+    "price": "30 peças de ouro",
+    "orderId": 5
+  }
+
   export default {
     validProduct,
     validProductDB,
     emptyProductName,
-    validProductList
+    validProductList,
+    productSemNome,
     };

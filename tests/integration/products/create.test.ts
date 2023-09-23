@@ -18,9 +18,17 @@ describe('POST /products', function () {
     expect(response.body).to.be.deep.equal(ProductMock.validProductDB);
   });
 
-  it('should return 400 when the name has invalid data', async function () {
+  it('should return 422 and error message when name is empty', async function () {
     const response = await chai.request(app).post('/products').send(ProductMock.emptyProductName);
+   
+    expect(response.status).to.be.equal(422);
+    expect(response.body).to.be.deep.equal({ message: '"name" is not allowed to be empty' });
+  });
+
+  it('should return 400 and error message when name is missing', async function () {
+    const response = await chai.request(app).post('/products').send(ProductMock.productSemNome);
+   
     expect(response.status).to.be.equal(400);
-    expect(response.body).to.be.deep.equal({ message: 'Product data is invalid' });
+    expect(response.body).to.be.deep.equal({ message: '"name" is required' });
   });
 });

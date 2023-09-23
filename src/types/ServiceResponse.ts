@@ -1,5 +1,5 @@
 export type ServiceResponseError = {
-  status: 'INVALID_DATA' | 'NOT_FOUND' | 'UNAUTHORIZED',
+  status: 'BAD_REQUEST' | 'NOT_FOUND' | 'UNAUTHORIZED' | 'UNPROCESSABLE',
   data: { message: string }
 };
 
